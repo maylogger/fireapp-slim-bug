@@ -1,0 +1,14 @@
+!!! 5
+
+%html{ :lang => "zh-TW" }
+  %head
+    %title haml template
+    %meta{ :charset => "utf-8" }
+
+  %body
+    #header
+      = yield :header
+
+    = yield
+
+    = livereload_js unless ENV["RACK_ENV"] == "production"
